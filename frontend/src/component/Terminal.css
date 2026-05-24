@@ -1,0 +1,81 @@
+.jarvis-terminal {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 350px;
+  max-width: 90vw;
+  background: rgba(10, 20, 35, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 229, 255, 0.4);
+  border-radius: 12px;
+  padding: 15px 20px;
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.2), inset 0 0 15px rgba(0, 229, 255, 0.1);
+  color: #00e5ff;
+  font-family: 'Orbitron', monospace;
+  font-size: 1rem;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: all 0.3s ease;
+}
+
+.jarvis-terminal.inactive {
+  opacity: 0.3;
+}
+
+.terminal-icon {
+  font-size: 1.5rem;
+  animation: pulse 1.5s infinite alternate;
+  flex-shrink: 0;
+}
+
+.terminal-text {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+}
+
+.user-text, .jarvis-text {
+  /* Make it show the most recent text efficiently without pushing bounds */
+  white-space: normal;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+}
+
+.jarvis-text {
+  color: #fff;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.label {
+  font-weight: bold;
+  opacity: 0.6;
+  margin-right: 5px;
+  color: #00e5ff;
+}
+
+.cursor {
+  display: inline-block;
+  width: 10px;
+  height: 1.2rem;
+  background-color: #00e5ff;
+  animation: blink 1s step-end infinite;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
+@keyframes pulse {
+  0% { text-shadow: 0 0 5px #00e5ff; opacity: 0.5; }
+  100% { text-shadow: 0 0 15px #00e5ff; opacity: 1; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}

@@ -1,0 +1,171 @@
+.widget-container {
+  background: rgba(10, 20, 35, 0.5);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 229, 255, 0.3);
+  border-radius: 8px;
+  padding: 15px 20px;
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.1), inset 0 0 10px rgba(0, 229, 255, 0.05);
+  color: #00e5ff;
+  font-family: 'Orbitron', sans-serif;
+  margin-bottom: 25px;
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+}
+
+/* Subtle glowing top border for tech feel */
+.widget-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(0, 229, 255, 0.8), transparent);
+}
+
+.widget-header {
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.widget-header .dot {
+  width: 6px;
+  height: 6px;
+  background: #00e5ff;
+  border-radius: 50%;
+  box-shadow: 0 0 5px #00e5ff;
+}
+
+.widget-content {
+  font-family: 'Rajdhani', sans-serif;
+}
+
+/* Specific Widget Styles */
+
+/* Location */
+.location-city {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #00e5ff;
+  text-shadow: 0 0 8px rgba(0, 229, 255, 0.5);
+  margin-bottom: 2px;
+}
+.location-country {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 8px;
+}
+.location-coords {
+  font-size: 0.7rem;
+  font-family: monospace;
+  color: rgba(0, 229, 255, 0.5);
+}
+
+/* System Hardware Grid */
+.hardware-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+.hw-item {
+  display: flex;
+  flex-direction: column;
+}
+.hw-label {
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+}
+.hw-value {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+/* Clock & Weather */
+.clock-time {
+  font-size: 2.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #00e5ff;
+  text-shadow: 0 0 15px rgba(0, 229, 255, 0.6);
+  text-align: right;
+}
+.clock-date {
+  font-size: 0.8rem;
+  text-align: right;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+.weather-box {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+.weather-temp {
+  font-size: 1.5rem;
+  color: #fff;
+}
+.weather-desc {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Software Status List */
+.status-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.status-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+}
+.status-indicator.active {
+  background: #00e5ff;
+  box-shadow: 0 0 8px #00e5ff;
+}
+.status-indicator.error {
+  background: #ff003c;
+  box-shadow: 0 0 8px #ff003c;
+}
+
+/* Greeting */
+.greeting-widget {
+  text-align: center;
+  margin-top: 40px;
+}
+.greeting-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #00e5ff;
+  text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+  margin-bottom: 5px;
+  letter-spacing: 1px;
+}
+.greeting-sub {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-style: italic;
+}
