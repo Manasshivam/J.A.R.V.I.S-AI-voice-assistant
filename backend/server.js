@@ -109,7 +109,7 @@ app.post('/api/chat', async (req, res) => {
 
     // Initial non-streaming request to check for tool calls
     let response = await axios.post("https://api.groq.com/openai/v1/chat/completions", {
-      model: "llama-3.3-70b-versatile",
+      model: "mixtral-8x7b-32768",
       messages: messages,
       tools: groqToolsSchema,
       tool_choice: "auto"
@@ -167,8 +167,10 @@ app.post('/api/chat', async (req, res) => {
     if (error.response && error.response.data) {
       console.error("Groq API Error Details:", JSON.stringify(error.response.data, null, 2));
     }
+    
+    // Instead of crashing the frontend with an ugly error, gracefully recover so J.A.R.V.I.S seamlessly speaks a fallback
     if (!res.headersSent) {
-      res.status(500).json({ error: "Error connecting to AI" });
+      res.json({ response: "I'm sorry sir, I encountered a slight static interference with my systems. Could you please repeat that?" });
     } else {
       res.end();
     }
