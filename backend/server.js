@@ -103,13 +103,13 @@ app.post('/api/chat', async (req, res) => {
 
   try {
     let messages = [
-      { role: "system", content: "You are J.A.R.V.I.S., a highly advanced, witty AI assistant. You have access to tools to control the computer. ALWAYS reply strictly in English. VERY IMPORTANT: You must keep your response to exactly ONE short sentence. Never output paragraphs. Be extremely fast and concise." },
+      { role: "system", content: "You are J.A.R.V.I.S., a highly advanced, witty AI assistant. You have access to tools to control the computer. ALWAYS reply strictly in English. CRITICAL INSTRUCTION: You MUST strictly converse normally unless the user explicitly asks you to open a website, application, or perform a specific task. DO NOT call any tools for conversational greetings like 'hello' or 'can you hear me'. Keep your responses short." },
       { role: "user", content: text }
     ];
 
     // Initial non-streaming request to check for tool calls
     let response = await axios.post("https://api.groq.com/openai/v1/chat/completions", {
-      model: "mixtral-8x7b-32768",
+      model: "llama-3.3-70b-versatile",
       messages: messages,
       tools: groqToolsSchema,
       tool_choice: "auto"
