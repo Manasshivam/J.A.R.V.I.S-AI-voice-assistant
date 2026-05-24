@@ -108,7 +108,7 @@ app.post('/api/chat', async (req, res) => {
 
     // Initial non-streaming request to check for tool calls
     let response = await axios.post("https://api.groq.com/openai/v1/chat/completions", {
-      model: "llama-3.1-8b-instant",
+      model: "llama-3.3-70b-versatile",
       messages: messages,
       tools: groqToolsSchema,
       tool_choice: "auto"
