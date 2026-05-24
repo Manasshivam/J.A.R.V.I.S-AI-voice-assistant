@@ -85,6 +85,7 @@ app.post('/api/chat', async (req, res) => {
           properties: {},
           required: []
         }
+      }
     },
     {
       type: "function",
